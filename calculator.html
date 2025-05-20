@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .buttonSize{
+            margin-top: 10px;
+            
+            background-color:rgba(255, 255, 255, 0.34);
+            backdrop-filter: blur(4px);
+           box-sizing: border-box;
+            width: 290px;
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        button{
+            background-color: skyblue;
+            margin: 2px;
+        }
+        button:hover{
+            transform: scale(1.05);
+        }
+        input[type="text"]{
+            padding: 10px 60px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(248, 243, 243);
+            font-weight: 300;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(images/calc.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            
+        }
+        h1{
+            padding-left: 20px;
+        }
+    
+        #end{
+            color: rgb(0, 4, 6);
+            text-decoration: none;
+        }
+        .back{
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-around;
+        }
+        #ho{
+            border-radius: 5px;
+            padding: 7px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calc">
+    <h1>CALCULATOR</h1>
+    <input type="text" id="input" style="text-align: right;">
+    <div class="buttonSize">
+    <button onclick="clearInput()" id="ac"><pre>  AC </pre></button>
+    <button onclick="clearInput()"><pre>  C  </pre></button>
+    <button onclick="appendVal('%')"><pre>  %  </pre></button>
+    <button onclick="appendVal('/')"><pre>  /  </pre></button>
+    <br/>
+    <br>
+    <button onclick="appendVal('9')"><pre>  9  </pre></button>
+    <button onclick="appendVal('8')"><pre>  8  </pre></button>
+    <button onclick="appendVal('7')"><pre>  7  </pre></button>
+    <button onclick="appendVal('*')"><pre>  x  </pre></button>
+    <br/>
+    <br> 
+    <button onclick="appendVal('6')"><pre>  6  </pre></button>
+    <button onclick="appendVal('5')"><pre>  5  </pre></button>
+    <button onclick="appendVal('4')"><pre>  4  </pre> </button>
+    <button onclick="appendVal('-')"><pre>  -  </pre> </button>
+    <br/>
+    <br>
+    <button onclick="appendVal('3')"><pre>  3  </pre></button>
+    <button onclick="appendVal('2')"><pre>  2  </pre></button>
+    <button onclick="appendVal('1')"><pre>  1  </pre></button>
+    <button onclick="appendVal('+')"><pre>  +  </pre></button>
+    <br/>
+    <br>
+    <button onclick="appendVal('00')"><pre>  00 </pre></button>
+    <button onclick="appendVal('0')"><pre>  0  </pre></button>
+    <button onclick="appendVal('.')"><pre>  .  </pre></button>
+    <button onclick="total()"><pre>  =  </pre></button>
+
+    </div>
+    <div class="back">
+
+    <button id="ho">
+        <a href="./landingpage.html" id = "end">HOME</a>
+    </button>
+</div>
+    </div>
+    <!-- <div class="back">
+
+    <button >
+        <a href="./landingpage.html" id = "end">HOME</a>
+    </button> -->
+</div>
+    <script>
+        function appendVal(val){
+            document.getElementById('input').value +=val;
+        }
+        function clearInput(){
+            document.getElementById('input').value = '';
+        }
+        function total(){
+            try{
+                document.getElementById('input').value = eval(document.getElementById('input').value);
+            }
+            catch{
+                alert("ENTER A VALID INPUT");
+            }
+        }
+    </script>
+</body>
+</html>

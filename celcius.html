@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        h1{
+            display: flex;
+            justify-content: space-around;
+        }
+        body{
+            margin-top: 100px;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            justify-content: space-around;
+            background-image: url(images/fahrenheit.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        input[type="number"]{
+            border-radius: 5px;
+            padding: 8px 25px;
+            background: transparent;
+        }
+        p{
+            font-size: 20px;
+        }
+        label{
+            font-size: 20px;
+        }
+        h1{
+            background-color: rgba(240, 248, 255, 0.382);
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+        }
+        button{
+            padding: 5px 20px;
+            border-radius: 5px;
+            background: transparent;
+        }
+        button:hover{
+            transform: scale(1.05);
+            transition: 50ms;
+        }
+        #end{
+            color: aliceblue;
+            text-decoration: none;
+        }
+        .back{
+            margin-top: 300px;
+            display: flex;
+            justify-content: space-around;
+        }
+        a{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 >FAHRENHEIT TO CELSIUS</h1>
+    <br>
+    <section>
+    <label for="fahrenheit">Enter the Fahrenheit : </label>
+    <br>
+    <input type="number" id="A">
+    <br>
+    <p id="output">Celsius : </p>
+    <br>
+    <button onclick="convert()">Convert</button>
+    </section>
+    <div class="back">
+
+    <button >
+        <a href="./landingpage.html" id = "end" style="color: black;">HOME</a>
+    </button>
+</div>
+    <script>
+        function convert(){
+        var a=parseFloat(document.getElementById("A").value);
+        var b=((a-32)*(5/9));
+        document.getElementById("output").innerText=`Celsius : ${b}`;
+        }
+    </script>
+
+</body>
+</html>
